@@ -27,6 +27,7 @@ public class DecisionActivity extends ListActivity {
 		registerForContextMenu(getListView());
 		dataSource = new ChoiceDataSource(this);
 		displayAllChoices();
+		bindNewChoiceButton();
 	}
 	
 	private List<Choice> choices;

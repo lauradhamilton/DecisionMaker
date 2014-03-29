@@ -1,5 +1,7 @@
 package com.example.decisionmaker.data;
 
+import java.util.UUID;
+
 public class Choice {
 	
 	private String id;
@@ -21,6 +23,14 @@ public class Choice {
 	@Override
 	public String toString() {
 		return this.getName();
+	}
+	
+	public Choice() {
+		id = UUID.randomUUID().toString();
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }
