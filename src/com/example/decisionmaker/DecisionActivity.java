@@ -1,6 +1,7 @@
 package com.example.decisionmaker;
 
 import java.util.List;
+import java.util.Random;
 
 import com.example.decisionmaker.data.Choice;
 import com.example.decisionmaker.data.ChoiceDataSource;
@@ -105,7 +106,15 @@ public class DecisionActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Choice choice = choices.get(position);
-		String messageForDisplay = choice.getName();
-		Toast.makeText(getApplicationContext(), messageForDisplay, Toast.LENGTH_SHORT).show();
+		updateChoiceFromInput(choice);
+	}
+	
+	private void decideOnChoices() {
+		int randPosition = new Random().nextInt(choices.size());
+		Choice selectedChoice = choices.get(randPosition);
+		
+		Toast.makeText(getApplicationContext(),
+				"Decision has been made!\nGo with " + selectedChoice.getName(),
+				Toast.LENGTH_SHORT).show();
 	}
 }
