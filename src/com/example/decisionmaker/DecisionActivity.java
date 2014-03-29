@@ -8,6 +8,7 @@ import com.example.decisionmaker.data.ChoiceDataSource;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -41,4 +42,15 @@ public class DecisionActivity extends ListActivity {
 		currentChoiceId = (int) info.id;
 		menu.add(0, 9999, 0, "Delete Choice");
 	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		if (item.getItemId() == 9999) {
+			Choice choice = choices.get(currentChoiceId);
+			dataSource.remove(choice);
+			displayAllChoices();
+		}
+		return super.onContextItemSelected(item);
+	}
+	
 }
