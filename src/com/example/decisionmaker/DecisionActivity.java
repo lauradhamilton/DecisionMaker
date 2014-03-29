@@ -117,4 +117,14 @@ public class DecisionActivity extends ListActivity {
 				"Decision has been made!\nGo with " + selectedChoice.getName(),
 				Toast.LENGTH_SHORT).show();
 	}
+	
+	private void bindDecideButton() {
+		Button decideButton = (Button) findViewById(R.id.decide);
+		decideButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				decideOnChoices();
+			}
+		});
+	}
 }
