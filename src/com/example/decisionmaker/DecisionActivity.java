@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.decisionmaker.data.Choice;
 import com.example.decisionmaker.data.ChoiceDataSource;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -15,6 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.EditText;
+import android.content.DialogInterface;
 
 public class DecisionActivity extends ListActivity {
 	
@@ -65,5 +68,26 @@ public class DecisionActivity extends ListActivity {
 						Toast.LENGTH_SHORT).show();
 			}
 		});
+	}
+	
+	private void createChoice() {
+		final Choice choice = new Choice();
+		
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+		
+		final EditText input = new EditText(this);
+		input.setText(choice.getName());
+		alert.setView(input);
+		
+		alert.setPositiveButton("Save",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				String updatedName = input.getText().toString();
+				choice.setName(updatedName);
+				dataSource.save(choice);
+				displayAllChoices();
+			}
+		});
+		
+		alert.show();
 	}
 }
