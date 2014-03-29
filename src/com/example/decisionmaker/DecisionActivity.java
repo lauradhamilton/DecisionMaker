@@ -33,6 +33,7 @@ public class DecisionActivity extends ListActivity {
 		dataSource = new ChoiceDataSource(this);
 		displayAllChoices();
 		bindNewChoiceButton();
+		bindDecideButton();
 	}
 	
 	private List<Choice> choices;
