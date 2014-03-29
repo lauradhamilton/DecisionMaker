@@ -90,6 +90,14 @@ public class DecisionActivity extends ListActivity {
 			}
 		});
 		
+		alert.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog,int id) {
+				// if this button is clicked, just close
+				// the dialog box and do nothing
+				dialog.cancel();
+			}
+		});
+		
 		alert.show();
 	}
 }
