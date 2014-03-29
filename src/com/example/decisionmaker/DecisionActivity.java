@@ -70,7 +70,8 @@ public class DecisionActivity extends ListActivity {
 	}
 	
 	private void createChoice() {
-		final Choice choice = new Choice();
+		Choice choice = new Choice();
+		updateChoiceFromInput(choice);
 	}
 	
 	private void updateChoiceFromInput(final Choice choice) {
