@@ -71,7 +71,9 @@ public class DecisionActivity extends ListActivity {
 	
 	private void createChoice() {
 		final Choice choice = new Choice();
-		
+	}
+	
+	private void updateChoiceFromInput(final Choice choice) {
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		
 		final EditText input = new EditText(this);
