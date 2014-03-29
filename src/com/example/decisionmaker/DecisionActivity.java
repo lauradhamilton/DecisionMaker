@@ -64,8 +64,7 @@ public class DecisionActivity extends ListActivity {
 		newChoiceButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "New Button Has Been Clicked",
-						Toast.LENGTH_SHORT).show();
+				createChoice();
 			}
 		});
 	}
