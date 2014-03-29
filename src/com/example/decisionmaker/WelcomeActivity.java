@@ -21,5 +21,6 @@ public class WelcomeActivity extends Activity {
 				startActivity(myIntent);
 			}
 		});
+		
 	}
 }
