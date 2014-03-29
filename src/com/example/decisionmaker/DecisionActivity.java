@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class DecisionActivity extends ListActivity {
 	
@@ -53,4 +55,14 @@ public class DecisionActivity extends ListActivity {
 		return super.onContextItemSelected(item);
 	}
 	
+	private void bindNewChoiceButton() {
+		Button newChoiceButton = (Button) findViewById(R.id.new_choice);
+		newChoiceButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), "New Button Has Been Clicked",
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
 }

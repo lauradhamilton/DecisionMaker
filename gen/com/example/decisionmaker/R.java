@@ -14,7 +14,8 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int get_started=0x7f060000;
+        public static final int get_started=0x7f060001;
+        public static final int new_choice=0x7f060000;
     }
     public static final class layout {
         public static final int activity_decision=0x7f030000;
