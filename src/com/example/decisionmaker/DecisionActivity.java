@@ -21,7 +21,6 @@ public class DecisionActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_decision);
-		setContentView(R.layout.categories);
 		registerForContextMenu(getListView());
 		dataSource = new ChoiceDataSource(this);
 		displayAllChoices();
