@@ -15,6 +15,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.EditText;
 import android.content.DialogInterface;
@@ -99,5 +100,12 @@ public class DecisionActivity extends ListActivity {
 		});
 		
 		alert.show();
+	}
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		Choice choice = choices.get(position);
+		String messageForDisplay = choice.getName();
+		Toast.makeText(getApplicationContext(), messageForDisplay, Toast.LENGTH_SHORT).show();
 	}
 }
