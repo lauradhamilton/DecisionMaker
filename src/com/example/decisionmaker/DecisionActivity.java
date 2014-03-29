@@ -34,6 +34,7 @@ public class DecisionActivity extends ListActivity {
 		displayAllChoices();
 		bindNewChoiceButton();
 		bindDecideButton();
+		bindExitButton();
 	}
 	
 	private List<Choice> choices;
