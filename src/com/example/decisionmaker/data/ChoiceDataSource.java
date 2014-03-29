@@ -28,4 +28,20 @@ public class ChoiceDataSource {
 		
 		return choiceList;
 	}
+	
+	public boolean save(Choice choice) {
+		SharedPreferences.Editor editor = choicePrefs.edit();
+		editor.putString(choice.getId(), choice.getName());
+		editor.commit();
+		return true;
+	}
+	
+	public boolean remove(Choice choice) {
+		if (choicePrefs.contains(choice.getId())) {
+			SharedPreferences.Editor editor = choicePrefs.edit();
+			editor.remove(choice.getId());
+			editor.commit();
+		}
+		return true;
+	}
 }

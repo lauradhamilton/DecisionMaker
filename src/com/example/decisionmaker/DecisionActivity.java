@@ -7,6 +7,10 @@ import com.example.decisionmaker.data.ChoiceDataSource;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 public class DecisionActivity extends ListActivity {
@@ -17,6 +21,8 @@ public class DecisionActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_decision);
+		setContentView(R.layout.categories);
+		registerForContextMenu(getListView());
 		dataSource = new ChoiceDataSource(this);
 		displayAllChoices();
 	}
@@ -28,4 +34,12 @@ public class DecisionActivity extends ListActivity {
 			ArrayAdapter<Choice> adapter = new ArrayAdapter<Choice>(this, android.R.layout.simple_list_item_1, choices);
 			setListAdapter(adapter);
 		}
+		
+	private int currentChoiceId;
+	
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+		currentChoiceId = (int) info.id;
+		menu.add(0, 9999, 0, "Delete Choice");
+	}
 }
