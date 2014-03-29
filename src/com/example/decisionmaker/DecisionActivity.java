@@ -128,4 +128,14 @@ public class DecisionActivity extends ListActivity {
 			}
 		});
 	}
+	
+	private void bindExitButton() {
+		Button exitButton = (Button) findViewById(R.id.exit);
+		exitButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+	}
 }
